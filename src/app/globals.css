@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #f2f2f2;
+    --speed: 0.8s;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* This completely inverts the site when active */
+  .dark {
+    --white: #0a0a0a; 
+    --black: #ffffff;
+    --grey: #1a1a1a;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    transition: background-color 0.5s var(--ease), color 0.5s var(--ease);
+  }
+}
+
+@layer utilities {
+  @keyframes load { to { width: 100%; } }
+  @keyframes reveal { 
+    0% { width: 0; border-right-color: var(--black); } 
+    100% { width: 100%; border-right-color: var(--black); } 
+  }
+  @keyframes blink { 50% { border-right-color: transparent; } }
+  @keyframes pageIn { to { opacity: 1; } }
+  @keyframes fadeIn { to { opacity: 1; transform: translateY(-10px); } }
+}

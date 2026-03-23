@@ -1,0 +1,31 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        white: "var(--white)",
+        black: "var(--black)",
+        grey: "var(--grey)",
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'],
+        mono: ['var(--font-roboto-mono)', 'monospace'],
+      },
+      transitionTimingFunction: {
+        'comfy': 'var(--ease)',
+      },
+      transitionDuration: {
+        'comfy': 'var(--speed)',
+      }
+    },
+  },
+  plugins: [],
+};
+
+export default config;
